@@ -9,8 +9,8 @@
 const int sensorPin = 7;
 const int echoPin = 6;
 
-//constant number of steps per revolution (200 steps = 360deg)
-const int stepsPerRev = 200;
+//constant number of steps per revolution (200 steps = 360deg) opens 45 deg
+const int stepsPerRev = 25;
 int motorSpeed = 60;
 
 //the stepper library is initialized on pins 8,10,9,11
@@ -56,11 +56,9 @@ void loop() {
   
   if(distance > 10 && distance < 100){
           stepperMotor.step(stepsPerRev);
+          stepperMotor.step(-stepsPerRev);
           delay(2000);
           }
-  /*else{
-    
-    }*/
 
   //2 sec delay
   delay(2000);
