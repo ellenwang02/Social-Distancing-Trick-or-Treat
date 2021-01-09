@@ -9,7 +9,7 @@
 const int sensorPin = 7;
 const int echoPin = 6;
 
-//constant number of steps per revolution (200 steps = 360deg) opens 45 deg
+//constant number of steps per revolution (200 steps = 360deg) 
 const int stepsPerRev = 25;
 int motorSpeed = 60;
 
@@ -56,7 +56,6 @@ void loop() {
   
   if(distance > 10 && distance < 100){
           stepperMotor.step(stepsPerRev);
-          stepperMotor.step(-stepsPerRev);
           delay(2000);
           }
 
